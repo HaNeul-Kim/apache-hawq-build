@@ -1,9 +1,11 @@
 # Apache HAWQ build and install (includes PXF)
 
+Apache Hadoop 2.7.2 버전 위에 HAWQ 2.0 dev 버전을 설치하고 HAWQ 에서 hdfs 와 web 의 파일을 읽어서 external table 을 만드는 것을 목표로 합니다.  
 Apache HAWQ 를 build, install 하는 순서와 명령어를 아주 자세하게 적어놓았습니다.  
 hadoop install 방법은 포함하지 않았고 pxf install 을 포함하고 있습니다.  
-먼저 실행 스크립트를 적어놓았고 그 뒤에 그 스크립트를 실행 한 결과 로그를 적어놓았습니다.  
+먼저 챕터별 전체 실행 스크립트를 적어놓았고 그 뒤에 부분별 실행 스크립트를 적어놓았고 그 다음에 실행 한 결과 로그를 적어놓았습니다.  
 문서는 asciidoc 으로 작성하였으며 repository 내에 asciidoc 및 pdf 파일도 포함되어 있습니다.  
+잘못된 점이 있으면 hskimsky@gmail.com 으로 메일 주시기 바랍니다.  
 빌드 성공을 기원합니다.
 
 https://github.com/apache/incubator-hawq
