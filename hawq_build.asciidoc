@@ -1728,6 +1728,77 @@ PXF webapp is up
 [root@hawq1 Downloads]#
 ----
 
+=== PXF service add
+
+[source,bash]
+----
+/root/Downloads/hawq/incubator-hawq/pxf/pxf-service/src/scripts/pxf-service stop
+vim pxf
+
+#! /bin/sh
+# chkconfig: 2345 90 90
+# description: Startup PXF
+
+case "${1}" in
+    start)
+        echo "PXF start"
+        source /etc/bashrc
+        /root/Downloads/hawq/incubator-hawq/pxf/pxf-service/src/scripts/pxf-service start
+        ;;
+    stop)
+        echo "PXF stop"
+        source /etc/bashrc
+        /root/Downloads/hawq/incubator-hawq/pxf/pxf-service/src/scripts/pxf-service stop
+        ;;
+    *)
+        echo "Usage:{start|stop}"
+        exit 1
+esac
+exit 0
+
+chmod 755 pxf
+cp ./pxf /etc/rc.d/init.d
+chkconfig --add pxf
+service pxf start
+----
+
+[source,log]
+----
+[root@hawq1 Downloads]# /root/Downloads/hawq/incubator-hawq/pxf/pxf-service/src/scripts/pxf-service stop
+/var/pxf ~/Downloads
+Using CATALINA_BASE:   /var/pxf/pxf-service
+Using CATALINA_HOME:   /var/pxf/pxf-service
+Using CATALINA_TMPDIR: /var/pxf/pxf-service/temp
+Using JRE_HOME:        /usr/local/java/default
+Using CLASSPATH:       /var/pxf/pxf-service/bin/bootstrap.jar:/var/pxf/pxf-service/bin/tomcat-juli.jar
+Using CATALINA_PID:    /var/run/pxf/catalina.pid
+Jun 11, 2016 3:41:18 PM org.apache.catalina.startup.Catalina stopServer
+SEVERE: No shutdown port configured. Shut down server through OS signal. Server not shut down.
+The stop command failed. Attempting to signal the process to stop through OS signal.
+Tomcat stopped.
+~/Downloads
+[root@hawq1 Downloads]# vim pxf
+[root@hawq1 Downloads]# chmod 755 pxf
+[root@hawq1 Downloads]# cp ./pxf /etc/rc.d/init.d
+[root@hawq1 Downloads]# chkconfig --add pxf
+[root@hawq1 Downloads]# service pxf start
+PXF start
+/var/pxf /
+Using CATALINA_BASE:   /var/pxf/pxf-service
+Using CATALINA_HOME:   /var/pxf/pxf-service
+Using CATALINA_TMPDIR: /var/pxf/pxf-service/temp
+Using JRE_HOME:        /usr/local/java/default
+Using CLASSPATH:       /var/pxf/pxf-service/bin/bootstrap.jar:/var/pxf/pxf-service/bin/tomcat-juli.jar
+Using CATALINA_PID:    /var/run/pxf/catalina.pid
+Tomcat started.
+/
+Checking if tomcat is up and running...
+tomcat not responding, re-trying after 1 second (attempt number 1)
+Checking if PXF webapp is up and running...
+PXF webapp is up
+[root@hawq1 Downloads]#
+----
+
 == HAWQ external table test
 
 HAWQ master node(hawq2.apache.local) 에서 HAWQ user(hskimsky) 로 작업합니다.
