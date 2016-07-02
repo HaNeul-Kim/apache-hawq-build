@@ -1400,6 +1400,7 @@ echo "##################################################################
 ##################################################################
 /etc/pxf/conf
 /usr/local/hadoop/default/etc/hadoop
+/usr/local/hadoop/default/share/hadoop/tools/lib/commons-lang3-3.3.2.jar
 /usr/local/hadoop/default/share/hadoop/hdfs/hadoop-hdfs-2.7.2.jar
 /usr/local/hadoop/default/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.2.jar
 /usr/local/hadoop/default/share/hadoop/common/lib/hadoop-auth-2.7.2.jar
@@ -1577,6 +1578,7 @@ echo "##################################################################
 ##################################################################
 /etc/pxf/conf
 /usr/local/hadoop/default/etc/hadoop
+/usr/local/hadoop/default/share/hadoop/tools/lib/commons-lang3-3.3.2.jar
 /usr/local/hadoop/default/share/hadoop/hdfs/hadoop-hdfs-2.7.2.jar
 /usr/local/hadoop/default/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.2.jar
 /usr/local/hadoop/default/share/hadoop/common/lib/hadoop-auth-2.7.2.jar
@@ -1627,6 +1629,7 @@ chown -R pxf:pxf /etc/pxf
 > ##################################################################
 > /etc/pxf/conf
 > /usr/local/hadoop/default/etc/hadoop
+> /usr/local/hadoop/default/share/hadoop/tools/lib/commons-lang3-3.3.2.jar
 > /usr/local/hadoop/default/share/hadoop/hdfs/hadoop-hdfs-2.7.2.jar
 > /usr/local/hadoop/default/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.2.jar
 > /usr/local/hadoop/default/share/hadoop/common/lib/hadoop-auth-2.7.2.jar
