@@ -535,6 +535,8 @@ hawq start cluster
 
 === PostGIS for Apache HAWQ install
 
+==== add PostGIS
+
 [source,bash]
 ----
 cd /root/Downloads/hawqgis/incubator-hawq/contrib/postgis/postgis
@@ -555,6 +557,24 @@ psql -h hawq2 -f postgis.sql -d postgis
 psql -h hawq2 -f postgis_comments.sql -d postgis
 psql -h hawq2 -f legacy.sql -d postgis
 psql -h hawq2 -f legacy_minimal.sql -d postgis
+----
+
+==== test PostGIS
+
+[source,sql]
+----
+select st_astext(ST_GeomFromText('LINESTRING(0 0, 2 4, 5 5)'));
+----
+
+[source,log]
+----
+postgis=# select st_astext(ST_GeomFromText('LINESTRING(0 0, 2 4, 5 5)'));
+        st_astext
+-------------------------
+ LINESTRING(0 0,2 4,5 5)
+(1 row)
+
+postgis=#
 ----
 
 `The end. Thanks.`
