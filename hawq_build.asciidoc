@@ -1400,6 +1400,7 @@ echo "##################################################################
 ##################################################################
 /etc/pxf/conf
 /usr/local/hadoop/default/etc/hadoop
+/usr/local/hadoop/default/share/hadoop/tools/lib/commons-lang3-3.3.2.jar
 /usr/local/hadoop/default/share/hadoop/hdfs/hadoop-hdfs-2.7.2.jar
 /usr/local/hadoop/default/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.2.jar
 /usr/local/hadoop/default/share/hadoop/common/lib/hadoop-auth-2.7.2.jar
@@ -1577,6 +1578,7 @@ echo "##################################################################
 ##################################################################
 /etc/pxf/conf
 /usr/local/hadoop/default/etc/hadoop
+/usr/local/hadoop/default/share/hadoop/tools/lib/commons-lang3-3.3.2.jar
 /usr/local/hadoop/default/share/hadoop/hdfs/hadoop-hdfs-2.7.2.jar
 /usr/local/hadoop/default/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.2.jar
 /usr/local/hadoop/default/share/hadoop/common/lib/hadoop-auth-2.7.2.jar
@@ -1627,6 +1629,7 @@ chown -R pxf:pxf /etc/pxf
 > ##################################################################
 > /etc/pxf/conf
 > /usr/local/hadoop/default/etc/hadoop
+> /usr/local/hadoop/default/share/hadoop/tools/lib/commons-lang3-3.3.2.jar
 > /usr/local/hadoop/default/share/hadoop/hdfs/hadoop-hdfs-2.7.2.jar
 > /usr/local/hadoop/default/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.2.jar
 > /usr/local/hadoop/default/share/hadoop/common/lib/hadoop-auth-2.7.2.jar
@@ -1739,19 +1742,35 @@ vim pxf
 # chkconfig: 2345 90 90
 # description: Startup PXF
 
+function start() {
+    echo "PXF start"
+    source /etc/bashrc
+    /root/Downloads/hawq/incubator-hawq/pxf/pxf-service/src/scripts/pxf-service start
+}
+
+function stop() {
+    echo "PXF stop"
+    source /etc/bashrc
+    /root/Downloads/hawq/incubator-hawq/pxf/pxf-service/src/scripts/pxf-service stop
+}
+
+function restart() {
+    stop
+    start
+}
+
 case "${1}" in
     start)
-        echo "PXF start"
-        source /etc/bashrc
-        /root/Downloads/hawq/incubator-hawq/pxf/pxf-service/src/scripts/pxf-service start
+        start
         ;;
     stop)
-        echo "PXF stop"
-        source /etc/bashrc
-        /root/Downloads/hawq/incubator-hawq/pxf/pxf-service/src/scripts/pxf-service stop
+        stop
+        ;;
+    restart)
+        restart
         ;;
     *)
-        echo "Usage:{start|stop}"
+        echo "Usage:{start|stop|restart}"
         exit 1
 esac
 exit 0
