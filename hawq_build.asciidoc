@@ -248,6 +248,8 @@ yum install -y apr-devel
 yum install -y libyaml-devel
 yum install -y flex
 yum install -y lcov
+yum install -y libesmtp-devel
+yum install -y perl-JSON
 ----
 
 ==== upgrade gcc
