@@ -1314,6 +1314,20 @@ Continue with HAWQ init Yy|Nn (default=N):
 [hskimsky@hawq2 ~]$
 ----
 
+===== hawq start cluster at hawq master (hawq2.apache.local)
+
+hskimsky 계정으로 작업합니다.
+
+[source,bash]
+----
+hawq start cluster
+----
+
+[source,log]
+----
+[hskimsky@hawq2 ~]$ hawq start cluster
+----
+
 ===== yanr application list
 
 [source,log]
