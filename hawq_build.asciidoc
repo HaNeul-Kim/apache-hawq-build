@@ -258,7 +258,7 @@ yum install -y perl-JSON
 ----
 cd /etc/yum.repos.d
 wget -O /etc/yum.repos.d/slc6-devtoolset.repo http://linuxsoft.cern.ch/cern/devtoolset/slc6-devtoolset.repo
-yum install -y devtoolset-2-gcc devtoolset-2-binutils devtoolset-2-gcc-c++
+yum install --nogpgcheck -y devtoolset-2-gcc devtoolset-2-binutils devtoolset-2-gcc-c++
 scl enable devtoolset-2 bash
 gcc --version
 g++ --version
@@ -269,8 +269,8 @@ g++ --version
 [source,log]
 ----
 [root@hawq2 incubator-hawq]# cd /etc/yum.repos.d
-[root@hawq2 yum.repos.d]# wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
-[root@hawq2 yum.repos.d]# yum install -y devtoolset-2-gcc devtoolset-2-binutils devtoolset-2-gcc-c++
+[root@hawq2 yum.repos.d]# wget -O /etc/yum.repos.d/slc6-devtoolset.repo http://linuxsoft.cern.ch/cern/devtoolset/slc6-devtoolset.repo
+[root@hawq2 yum.repos.d]# yum install --nogpgcheck -y devtoolset-2-gcc devtoolset-2-binutils devtoolset-2-gcc-c++
 [root@hawq2 yum.repos.d]# scl enable devtoolset-2 bash
 ----
 
