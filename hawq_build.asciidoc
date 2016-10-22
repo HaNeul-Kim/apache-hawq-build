@@ -226,7 +226,7 @@ yum repolist
 wget http://sourceforge.net/projects/boost/files/boost/1.56.0/boost_1_56_0.tar.bz2
 wget http://archive.apache.org/dist/thrift/0.9.1/thrift-0.9.1.tar.gz
 wget https://github.com/google/protobuf/archive/v2.5.0.zip
-wget http://www.execve.net/curl/curl-7.49.0.tar.gz
+wget https://curl.haxx.se/download/curl-7.44.0.tar.gz
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 
@@ -589,8 +589,8 @@ libprotoc 2.5.0
 [source,bash]
 ----
 cd ..
-tar zxf curl-7.49.0.tar.gz
-cd curl-7.49.0
+tar zxf curl-7.44.0.tar.gz
+cd curl-7.44.0
 ./configure && make && make install
 ----
 
@@ -599,16 +599,16 @@ cd curl-7.49.0
 [source,log]
 ----
 [root@hawq2 protobuf-2.5.0]# cd ..
-[root@hawq2 hawq]# tar zxf curl-7.49.0.tar.gz
-[root@hawq2 hawq]# cd curl-7.49.0
-[root@hawq2 curl-7.49.0]#
+[root@hawq2 hawq]# tar zxf curl-7.44.0.tar.gz
+[root@hawq2 hawq]# cd curl-7.44.0
+[root@hawq2 curl-7.44.0]#
 ----
 
 ===== configure
 
 [source,log]
 ----
-[root@hawq2 curl-7.49.0]# ./configure && make && make install
+[root@hawq2 curl-7.44.0]# ./configure && make && make install
 checking whether to enable maintainer-specific portions of Makefiles... no
 checking whether to enable debug build options... no
 checking whether to enable compiler optimizer... (assumed) yes
@@ -626,13 +626,13 @@ checking for sed... /bin/sed
 ...생략
 /bin/mkdir -p '/usr/local/share/man/man1'
 /usr/bin/install -c -m 644 curl.1 curl-config.1 '/usr/local/share/man/man1'
-make[6]: Leaving directory `/root/Downloads/hawq/curl-7.49.0/docs'
-make[5]: Leaving directory `/root/Downloads/hawq/curl-7.49.0/docs'
-make[4]: Leaving directory `/root/Downloads/hawq/curl-7.49.0/docs'
-make[3]: Leaving directory `/root/Downloads/hawq/curl-7.49.0'
-make[2]: Leaving directory `/root/Downloads/hawq/curl-7.49.0'
-make[1]: Leaving directory `/root/Downloads/hawq/curl-7.49.0'
-[root@hawq2 curl-7.49.0]#
+make[6]: Leaving directory `/root/Downloads/hawq/curl-7.44.0/docs'
+make[5]: Leaving directory `/root/Downloads/hawq/curl-7.44.0/docs'
+make[4]: Leaving directory `/root/Downloads/hawq/curl-7.44.0/docs'
+make[3]: Leaving directory `/root/Downloads/hawq/curl-7.44.0'
+make[2]: Leaving directory `/root/Downloads/hawq/curl-7.44.0'
+make[1]: Leaving directory `/root/Downloads/hawq/curl-7.44.0'
+[root@hawq2 curl-7.44.0]#
 ----
 
 ==== upgrade cmake
