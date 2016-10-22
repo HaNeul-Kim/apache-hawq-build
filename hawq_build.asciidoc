@@ -257,7 +257,7 @@ yum install -y perl-JSON
 [source,bash]
 ----
 cd /etc/yum.repos.d
-wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
+wget -O /etc/yum.repos.d/slc6-devtoolset.repo http://linuxsoft.cern.ch/cern/devtoolset/slc6-devtoolset.repo
 yum install -y devtoolset-2-gcc devtoolset-2-binutils devtoolset-2-gcc-c++
 scl enable devtoolset-2 bash
 gcc --version
