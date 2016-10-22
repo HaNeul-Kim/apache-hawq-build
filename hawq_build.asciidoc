@@ -462,6 +462,10 @@ cd ..
 unzip v2.5.0.zip
 yum groupinstall -y "Development Tools"
 cd protobuf-2.5.0/
+# ./autogen.sh 실행 전 autogen.sh 파일의 아래 부분을 수정 해야 함
+# curl http://googletest.googlecode.com/files/gtest-1.5.0.tar.bz2 | tar jx
+# 위 줄을 아래 줄로 변경해야 함
+# curl http://pkgs.fedoraproject.org/repo/pkgs/gtest/gtest-1.5.0.tar.bz2/8b2c3c3f26cb53e64a3109d03a97200a/gtest-1.5.0.tar.bz2 | tar jx
 ./autogen.sh
 ./configure && make && make install
 protoc --version
