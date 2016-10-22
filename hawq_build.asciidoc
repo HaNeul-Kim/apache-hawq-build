@@ -756,7 +756,7 @@ g++  -I/root/Downloads/hawq/cmake-3.0.0/Bootstrap.cmk -I/root/Downloads/hawq/cma
 [source,bash]
 ----
 echo "/root/Downloads/hawq/boost_1_56_0/stage/lib" >> /etc/ld.so.conf.d/boost.conf
-echo "/root/Downloads/hawq/curl-7.49.0/lib/.libs" >> /etc/ld.so.conf.d/curl.conf
+echo "/root/Downloads/hawq/curl-7.44.0/lib/.libs" >> /etc/ld.so.conf.d/curl.conf
 echo "/usr/local/lib" >> /etc/ld.so.conf.d/usr-local-lib.conf
 ----
 
