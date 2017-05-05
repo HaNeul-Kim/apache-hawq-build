@@ -143,6 +143,14 @@ export PATH=${JAVA_HOME}/bin:${M2_HOME}/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sb
         <name>mapreduce.framework.name</name>
         <value>yarn</value>
     </property>
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>hawq1.apache.local:8088</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value>hawq1.apache.local:19888</value>
+    </property>
 </configuration>
 ----
 
