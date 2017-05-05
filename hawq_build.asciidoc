@@ -827,7 +827,7 @@ make -j8
 make install
 ----
 
-/usr/local/hawq/default 아래에 hawq 실용 소스가 설치됩니다.
+/usr/local/hawq/default 아래에 hawq 설치용 소스가 설치됩니다.
 
 ===== source code download
 
