@@ -1013,6 +1013,8 @@ HAWQ installation complete.
 
 ===== HAWQ init dependencies install
 
+hawq 2.2.0.0 에서는 easy_install 로 package 설치하지 않아도 되도록 바뀌었음
+
 [source,bash]
 ----
 easy_install https://pypi.python.org/packages/5d/30/3f9192377ee563f92c9bb6e8daf32d2c11fd484cd3efe431686e74edc61d/PSI-0.3b2.tar.gz
