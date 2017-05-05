@@ -815,6 +815,8 @@ kernel.sem = 250 512000 100 2048
 
 ==== Apache HAWQ
 
+2017-05-05 maven 3.5.0 지원하지 않음
+
 [source,bash]
 ----
 git clone https://git-wip-us.apache.org/repos/asf/incubator-hawq.git
